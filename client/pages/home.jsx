@@ -1,10 +1,10 @@
 import React from 'react';
-import HelloWorld from '../components/hello-world';
+import Slider from '../components/slider/slider';
 
 export default function Home(props) {
   return (
     <div>
-      <HelloWorld />
+      <Slider/>
     </div>
   );
 }
