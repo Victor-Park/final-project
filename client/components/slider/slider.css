@@ -1,5 +1,19 @@
+.carousel-container {
+  padding-bottom: 50px;
+}
+
 .carousel {
   margin-top: 250px;
+}
+
+.carousel-indicators {
+  bottom: -50px !important;
+}
+
+.carousel-indicators button {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50%;
 }
 
 @media only screen and (min-width: 768px) {

@@ -4,7 +4,7 @@ import './slider.css';
 
 export default function Slider() {
   return (
-    <div>
+    <div className="carousel-container">
       <Carousel fade interval={3000} nextIcon={false} prevIcon={false}>
         <Carousel.Item>
           <img
