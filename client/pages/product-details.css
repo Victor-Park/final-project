@@ -6,14 +6,24 @@
 .description {
   color: white;
   white-space: pre-wrap;
+  padding-top: 2%;
 }
 
 .main-pic {
   width: 100%;
 }
 
+.extra-pic-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .extra-pic {
-  width: 33%;
+  width: 32%;
   padding-top: 10px;
   padding-bottom: 25px;
+}
+
+.name {
+  padding-bottom: 2%;
 }

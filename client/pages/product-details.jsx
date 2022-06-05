@@ -35,17 +35,17 @@ export default class ProductDetails extends React.Component {
             <div className="row">
               <div className="col-12 col-sm-6 col-md-5">
                 <img src={imageUrl} alt={name} className="main-pic" />
+                <div className="extra-pic-row">
+                  <img src={imageUrl2} alt={name} className="extra-pic" />
+                  <img src={imageUrl3} alt={name} className="extra-pic" />
+                  <img src={imageUrl4} alt={name} className="extra-pic" />
+                </div>
               </div>
               <div className="col-12 col-sm-6 col-md-7 header">
-                <h2>{name}</h2>
+                <h2 className="name">{name}</h2>
                 <h5>Brand: {brand}</h5>
                 <h5>Availability: {availability}</h5>
                 <h5 className="price">Price: {toDollars(price)}</h5>
-              </div>
-              <div className="col-12 col-sm-6 col-md-5">
-                <img src={imageUrl2} alt={name} className="extra-pic" />
-                <img src={imageUrl3} alt={name} className="extra-pic" />
-                <img src={imageUrl4} alt={name} className="extra-pic" />
               </div>
             </div>
             <div className="row">
