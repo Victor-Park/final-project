@@ -23,7 +23,12 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <Catalogue />;
+      return (
+        <>
+      <Home />
+      <Catalogue />
+        </>
+      );
     }
     if (route.path === 'products') {
       const productId = route.params.get('productId');
@@ -35,7 +40,6 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        <Home />
         {this.renderPage()}
       </>
     );

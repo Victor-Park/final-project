@@ -1,0 +1,19 @@
+.header {
+  color: white;
+  position: relative;
+}
+
+.description {
+  color: white;
+  white-space: pre-wrap;
+}
+
+.main-pic {
+  width: 100%;
+}
+
+.extra-pic {
+  width: 33%;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
