@@ -16,5 +16,8 @@ create table "public"."products" (
   "imageUrl"          text    not null,
   "brand"             text    not null,
   "availability"      text    not null,
+  "imageUrl2"         text    not null,
+  "imageUrl3"         text    not null,
+  "imageUrl4"         text    not null,
   primary key ("productId")
 )

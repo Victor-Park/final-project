@@ -40,7 +40,10 @@ app.get('/api/products/:productId', (req, res, next) => {
            "price",
            "imageUrl",
            "brand",
-           "availability"
+           "availability",
+           "imageUrl2",
+           "imageUrl3",
+           "imageUrl4"
       from "products"
      where "productId" = $1
   `;
