@@ -3,7 +3,7 @@ import Catalogue from './pages/catalogue';
 import NotFound from './pages/not-found';
 import ProductDetails from './pages/product-details';
 import { parseRoute } from './lib';
-import Home from './pages/home';
+import Slider from './components/slider/slider';
 import './app.css';
 
 export default class App extends React.Component {
@@ -15,9 +15,13 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('hashchange', () => {
-      this.setState({ route: parseRoute(window.location.hash) });
-    }, false);
+    window.addEventListener(
+      'hashchange',
+      () => {
+        this.setState({ route: parseRoute(window.location.hash) });
+      },
+      false
+    );
   }
 
   renderPage() {
@@ -25,8 +29,8 @@ export default class App extends React.Component {
     if (route.path === '') {
       return (
         <>
-      <Home />
-      <Catalogue />
+          <Slider />
+          <Catalogue />
         </>
       );
     }
@@ -38,10 +42,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <>
-        {this.renderPage()}
-      </>
-    );
+    return <>{this.renderPage()}</>;
   }
 }
