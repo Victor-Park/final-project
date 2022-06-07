@@ -4,6 +4,8 @@ import NotFound from './pages/not-found';
 import ProductDetails from './pages/product-details';
 import { parseRoute } from './lib';
 import Slider from './components/slider/slider';
+import Dropdown1 from './components/dropdown/dropdown';
+import Navbar from './components/navbar/navbar';
 import './app.css';
 
 export default class App extends React.Component {
@@ -29,6 +31,8 @@ export default class App extends React.Component {
     if (route.path === '') {
       return (
         <>
+          <Navbar />
+          <Dropdown1 />
           <Slider />
           <Catalogue />
         </>

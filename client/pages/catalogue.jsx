@@ -20,13 +20,11 @@ export default class Catalogue extends React.Component {
     return (
       <div className="catalogue-container">
         <div className="catalogue-row">
-          {
-            this.state.products.map(product => (
-              <div key={product.productId} className="col-fourth">
-                <Product product={product} />
-              </div>
-            ))
-          }
+          {this.state.products.map(product => (
+            <div key={product.productId} className="col-fourth">
+              <Product product={product} />
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -34,7 +32,7 @@ export default class Catalogue extends React.Component {
 }
 
 function Product(props) {
-  const { productId, name, /* description, categoryId, */ price, imageUrl/* , brand, availability */ } = props.product;
+  const { productId, name, price, imageUrl } = props.product;
   return (
     <a href={`#products?productId=${productId}`} className="inline-block">
       <img src={imageUrl} className="full-width" alt={name} />

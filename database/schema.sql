@@ -20,4 +20,4 @@ create table "public"."products" (
   "imageUrl3"         text    not null,
   "imageUrl4"         text    not null,
   primary key ("productId")
-)
+);

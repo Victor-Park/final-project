@@ -27,3 +27,20 @@
 .name {
   padding-bottom: 2%;
 }
+
+.product-details-container {
+  background-color: #1f2120;
+}
+
+.product-details-row {
+  width: 100%;
+  display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-details-row {
+    margin-left: 15%;
+    display: flex;
+    width: 75%;
+  }
+}

@@ -1,0 +1,34 @@
+.dropdown-container {
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  margin-top: 220px;
+  padding: 5px 0;
+}
+
+.dropdown-row {
+  display: flex;
+}
+
+.dropdown-header {
+  color: white !important;
+  font-size: 1em !important;
+}
+
+.btn-primary {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 25px !important;
+  width: 150px;
+}
+
+@media only screen and (min-width: 768px) {
+  .dropdown-header {
+    font-size: 1.25em !important;
+  }
+
+  .dropdown-row {
+    display: flex;
+    margin-left: 13%;
+  }
+}

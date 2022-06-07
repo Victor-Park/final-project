@@ -1,0 +1,40 @@
+.navbar-container {
+  background-color: #1f2120;
+  width: 100%;
+  position: absolute;
+  margin-top: 150px;
+  padding: 5px 0;
+  border-bottom: 2px solid red;
+}
+
+.navbar-row {
+  width: 75%;
+  margin-left: 13%;
+  position: relative;
+}
+
+.red-color {
+  color: red;
+}
+
+.home-button {
+  background: red;
+  color: white;
+  border-style: none;
+  position: absolute;
+  border: solid red;
+}
+
+.category-button {
+  background: #1f2120;
+  color: white;
+  border-style: none;
+  position: absolute;
+  left: 75px;
+}
+
+.align-right {
+  position: absolute;
+  right: 25px;
+  bottom: 5px;
+}
