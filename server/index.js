@@ -4,6 +4,7 @@ const db = require('./db');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const sessionMiddleware = require('./session-middleware');
 
 const app = express();
 
@@ -13,7 +14,47 @@ if (process.env.NODE_ENV === 'development') {
   app.use(require('./dev-middleware')(publicPath));
 }
 
+const middleware = express.json();
+app.use(middleware);
 app.use(staticMiddleware);
+
+app.post('/api/cart', sessionMiddleware, (req, res) => {
+  const productId = Number(req.body.productId);
+  const input = [req.body.productId];
+  if (!Number.isInteger(productId) || productId < 0) {
+    res.status(400).json({
+      error: '"productId" must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+  insert into "cart" ("userId")
+  values ($1) returning "cartId"
+  `;
+  db.query(sql, input)
+    .then(result => {
+      const cartId = Number(result.rows[0].cartId);
+      const input = [result.rows[0].cartId, req.body.productId];
+      if (!Number.isInteger(cartId) || cartId < 0) {
+        res.status(400).json({
+          error: '"cartId" must be a positive integer'
+        });
+        return;
+      }
+      const sql = `
+      insert into "cartItems" ("cartId", "productId")
+      values ($1, $2) returning *
+      `;
+      db.query(sql, input);
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'an unexpected error occurred.'
+      });
+    });
+});
 
 app.get('/api/products', (req, res, next) => {
   const sql = `
